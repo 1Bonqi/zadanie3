@@ -14,20 +14,19 @@ class Shop:
 
     def get_products(self):
         _open = open(self.__file_name, 'r')
-        _product = _open.read()
+        products = _open.read()
         _open.close()
-        return _product
+        return products
 
-    def __add__(self, *products):
+    def add(self, *products):
         product = self.get_products()
-        _open = open(self.__file_name, 'a')
         for i in products:
-            if str(i) in product:
-                print(f'Продукт {i} уже есть в магазине')
-            else:
+            if str(i) not in product:
+                _open = open(self.__file_name, 'a')
                 _open.write(f'{str(i)}\n')
-                product += str(i), '\n'
-        _open.close()
+                _open.close()
+            else:
+                print(f'Продукт {i} уже есть в магазине')
 
 
 
@@ -38,6 +37,6 @@ p3 = Product('Potato', 5.5, 'Vegetables')
 
 print(p2)  # __str__
 
-s1.__add__(p1, p2, p3)
+s1.add(p1, p2, p3)
 
 print(s1.get_products())
