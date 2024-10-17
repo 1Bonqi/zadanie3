@@ -15,7 +15,7 @@ r = 0
 g = 0
 b = 255
 circle_start_size = 1
-circle_end_size = 50
+circle_end_size = 200
 current_size = circle_end_size
 size_dir = 1
 
