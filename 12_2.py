@@ -29,7 +29,7 @@ class TournamentTest(unittest.TestCase):
         self.assertTrue(TournamentTest.all_results[2] == self.run3)
 
     def test3(self):
-        t3 = runner_2.Tournament(90, self.run1, self.run2, self.run3)
+        t3 = runner_2.Tournament(90, self.run2, self.run1, self.run3)
         TournamentTest.all_results = t3.start()
         self.assertTrue(TournamentTest.all_results[3] == self.run3)
 
